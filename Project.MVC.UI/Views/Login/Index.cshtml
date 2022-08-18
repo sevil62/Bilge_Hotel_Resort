@@ -1,0 +1,73 @@
+﻿@model  AppUserVM
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/OuterTools/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/OuterTools/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/OuterTools/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/OuterTools/css/style.css" rel="stylesheet">
+    <link href="~/OuterTools/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/OuterTools/js/html5shiv.js"></script>
+    <script src="~/OuterTools/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-body">
+    @if (TempData["error"] != null)
+    {
+        <h2>@TempData["error"]</h2>
+    }
+    <div class="container">
+        @using (Html.BeginForm("index", "Login", FormMethod.Post, new { @class = "form-signin" }))
+
+        {
+
+
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <div class="login-wrap">
+
+               
+                @Html.ValidationMessageFor(x => x.Username)
+
+                @Html.TextBoxFor(x => x.Username, new { @class = "form-control", placeholder = "User Name" })
+
+               
+                @Html.ValidationMessageFor(x => x.Password)
+
+               @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Password" })
+
+                <br />
+
+                <button class="btn btn-lg btn-login btn-block" type="submit">Log in</button>
+
+                <div class="registration">
+
+                    @Html.ActionLink("Sign Up", "RegisterNow", "Register")
+
+
+                </div>
+
+            </div>
+        }
+    </div>
+</body>

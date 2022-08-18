@@ -1,0 +1,92 @@
+﻿@model RoomVM
+@{
+    ViewBag.Title = "AddRoom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+<!--Eger Bir dosya gonderme işlemi yapacaksanız kesinlikle enclosing type parametresinin BeginForm'a verilmesi gerekir-->
+
+@using (Html.BeginForm("AddRoom", "Room", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+
+            <section class="panel">
+
+                <header class="panel-heading">
+                    Room Add
+                </header>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Price</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Room.Price, new { @class = "form-control genislik", placeholder = "Room Price" })
+                        </div>
+
+                    </div>
+                    <br /> <br />
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Room Floor</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Room.Description, new { @class = "form-control genislik", placeholder = "Description" })
+                        </div>
+
+                    </div>
+
+                    <br /> <br />
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Room Floor</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Room.RoomFloor, new { @class = "form-control genislik", placeholder = "Room Floor" })
+                        </div>
+
+                    </div>
+                    <br /> <br />
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Room Number</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Room.RoomNumber, new { @class = "form-control genislik", placeholder = "Room Number" })
+                        </div>
+
+                    </div>
+                    <br /> <br />
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">IMG Select</label>
+                        <div class="col-sm-10">
+                           
+                            <input type="file" name="img" class="form-control genislik" />
+                        </div>
+
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Add</label>
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary">
+                                Room Add
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </div>
+    </div>
+}
+

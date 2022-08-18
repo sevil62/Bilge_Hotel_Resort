@@ -1,0 +1,52 @@
+﻿@model RoomVM
+@{
+    ViewBag.Title = "RoomList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3> Room Add @Html.ActionLink("Tıklayınız", "AddRoom")</h3>
+<div class="panel-body">
+    <div class="adv-table">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+                <tr>
+                    <th>NumberPeople</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Room Number</th>
+                    <th>Room Floor</th>
+                    
+                    <th>Room Image</th>
+                    <th class="hidden-phone">State</th>
+                    <th class="hidden-phone">Delete</th>
+                    <th class="hidden-phone">Update</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Room item in Model.Rooms)
+                {
+                    <tr class="gradeX">
+                        <td>@item.NumberPeople</td>
+                        <td>@item.Price</td>
+
+                        <td>@item.Description</td>
+                        
+                        <td>@item.RoomNumber</td>
+                        <td>@item.RoomFloor</td>
+                        
+                        <td> <img width="60" height="60" src="@item.ImagePath" />  </td>
+                        <td>@item.Status</td>
+
+
+                        <td class="center hidden-phone">@Html.ActionLink("Delete", "DeleteRoom", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Update", "UpdateRoom", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="~/Areas/Admin/AdminContent/RoomDTJ.js"></script>

@@ -1,0 +1,69 @@
+﻿@model StaffVM
+@{
+    ViewBag.Title = "StaffListReseptionist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel-body">
+    <div class="adv-table">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>TC</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Hour</th>
+                    <th>Wage</th>
+
+
+                    <th>Department</th>
+
+                    <th class="hidden-phone">State</th>
+                    <th class="hidden-phone">Delete</th>
+                    <th class="hidden-phone">Update</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Staff item in Model.Staffs)
+                {
+                    if (item.Department == Project.ENTITIES.Enums.Department.ReseptionistChef)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.FirstName</td>
+                            <td>
+                                @item.LastName
+                            </td>
+                            <td class="hidden-phone">@item.Address</td>
+                            <td class="hidden-phone">@item.TC</td>
+                            <td>@item.City</td>
+                            <td>@item.Country</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Email</td>
+                            <td>@item.Hour</td>
+                            <td>@item.Wage</td>
+
+                            <td>@item.Department</td>
+                            <td>@item.Status</td>
+
+
+                            <td class="center hidden-phone">@Html.ActionLink("Delete", "DeleteStaffReseptionist", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                            <td class="center hidden-phone">@Html.ActionLink("Update", "UpdateStaffReseptionist", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        </tr>
+                    }
+                }
+
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script src="~/Areas/HumanResources/HumanResourceContent/StaffReseptionistDTJ.js"></script>

@@ -1,0 +1,114 @@
+﻿@model StaffVM
+@{
+    ViewBag.Title = "DetailStaffReseptionist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                responsive table
+            </header>
+            <div class="panel-body">
+
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>01.09.2022</th>
+                                <th>02.09.2022</th>
+                                <th>03.09.2022 </th>
+                                <th>04.09.2022</th>
+                                <th>05.09.2022</th>
+                                <th>06.09.2022</th>
+                                <th>07.09.2022</th>
+                                <th>08.09.2022</th>
+                                <th>09.09.2022</th>
+                                <th>10.09.2022</th>
+                                <th>11.09.2022</th>
+                                <th>12.09.2022</th>
+                                <th>13.09.2022</th>
+                                <th>14.09.2022</th>
+                                <th>15.09.2022</th>
+                                <th>16.09.2022</th>
+                                <th>17.09.2022</th>
+                                <th>18.09.2022</th>
+                                <th>19.09.2022</th>
+                                <th>20.09.2022</th>
+                                <th>21.09.2022</th>
+                                <th>22.09.2022</th>
+                                <th>23.09.2022</th>
+                                <th>24.09.2022</th>
+                                <th>25.09.2022</th>
+                                <th>26.09.2022</th>
+                                <th>27.09.2022</th>
+                                <th>28.09.2022</th>
+                                <th>29.09.2022</th>
+                                <th>30.09.2022</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Staff item in Model.Staffs)
+                            {
+                                if (item.Department == Project.ENTITIES.Enums.Department.Reseptionist)
+                                {
+                                    <tr>
+                                        <td>@item.FirstName</td>
+                                        <td>@item.LastName</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        
+
+                                        <td>izinli</td>
+                                        <td>16:00-00:00</td>
+                                        <td>16:00-00:00</td>
+                                        <td>16:00-00:00</td>
+                                        <td>16:00-00:00</td>
+                                        <td>16:00-00:00</td>
+                                        <td>16:00-00:00</td>
+                                        
+
+                                        <td>izinli</td>
+                                        <td>00:00-08:00</td>
+                                        <td>00:00-08:00</td>
+                                        <td>00:00-08:00</td>
+                                        <td>00:00-08:00</td>
+                                        <td>00:00-08:00</td>
+                                        <td>00:00-08:00</td>
+                                        
+
+                                        <td>izinli</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+                                        
+                                        <td>izinli</td>
+                                        <td>08:00-16:00</td>
+                                        <td>08:00-16:00</td>
+
+
+
+                                    </tr>
+                                }
+
+
+                            }
+
+
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </div>
+</div>

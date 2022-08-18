@@ -1,0 +1,141 @@
+﻿@model Room
+@{
+    ViewBag.Title = "AddToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="/OuterTools/dist/mc-calendar.min.css" rel="stylesheet" />
+<form method="post" action="AddToCart">
+
+
+    <div class="panel-body">
+
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Checking Date</label>
+            <input type="text" class="form-control" id="giristarih" placeholder="Please select check-in date"name="ChekingDate">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Realese Date</label>
+            <input type="text" class="form-control" id="cikistarih" placeholder="Please select a release date"name="ReleaseDate">
+        </div>
+
+        <div class="form-group">
+
+            <select class="form-control round-input-sm m-bot15" name="BookingStatus">
+                
+                <option value="1" >allinclusive</option>
+                <option value="2">fullpension</option>
+                
+            </select>
+
+        </div>
+        <br />
+
+
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">First Name</label>
+            <input type="text" class="form-control" placeholder="FirstName" name="FirstName">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Last Name</label>
+            <input type="text" class="form-control" placeholder="LastName" name="LastName">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">TC</label>
+            <input type="text" class="form-control" placeholder="TC" name="TC">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Phone</label>
+            <input type="text" class="form-control" placeholder="Phone" name="Phone">
+        </div>
+
+        <div class="form-group">
+            <input type="hidden" value="@Model.ID" name="RoomId" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Confirm</button>
+
+
+    </div>
+</form>
+
+
+    <script src="/OuterTools/dist/mc-calendar.min.js"></script>
+
+    <script>
+        /*debugger*/
+        MCDatepicker.create({
+
+            el: '#giristarih',// input id ile eşleşmeli
+            showCalendarDisplay: true, // Takvim görünümü istiyorsanız `true` yapınız
+            dateFormat: 'DD-MM-YYYY', // Tarih formatı
+            customClearBTN: 'Clear', // Temizle butonu yazısı
+            customOkBTN: 'Ok', // Tamam butonu yazısı
+            customCancelBTN: 'Cancel', // İptal Et butonu yazısı
+            customWeekDays: [
+                'Pazartesi',
+                'Salı',
+                'Çarşamba',
+                'Perşembe',
+                'Cuma',
+                'Ctesi',
+                'Pazar'
+            ], // Türkçe gün isimleri
+            customMonths: [
+                'Ocak',
+                'Şubat',
+                'Mart',
+                'Nisan',
+                'Mayıs',
+                'Haziran',
+                'Temmuz',
+                'Ağustos',
+                'Eylül',
+                'Ekim',
+                'Kasım',
+                'Aralık'
+            ] // Türkçe ay isimleri
+        })
+    </script>
+    <script>
+        MCDatepicker.create({
+
+            el: '#cikistarih',// input id ile eşleşmeli
+            showCalendarDisplay: true, // Takvim görünümü istiyorsanız `true` yapınız
+            dateFormat: 'DD-MM-YYYY', // Tarih formatı
+            customClearBTN: 'Clear', // Temizle butonu yazısı
+            customOkBTN: 'Ok', // Tamam butonu yazısı
+            customCancelBTN: 'Cancel', // İptal Et butonu yazısı
+            customWeekDays: [
+                'Pazartesi',
+                'Salı',
+                'Çarşamba',
+                'Perşembe',
+                'Cuma',
+                'Ctesi',
+                'Pazar'
+            ], // Türkçe gün isimleri
+            customMonths: [
+                'Ocak',
+                'Şubat',
+                'Mart',
+                'Nisan',
+                'Mayıs',
+                'Haziran',
+                'Temmuz',
+                'Ağustos',
+                'Eylül',
+                'Ekim',
+                'Kasım',
+                'Aralık'
+            ] // Türkçe ay isimleri
+        })
+    </script>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/Content/js/scripts.js"></script>
+ 

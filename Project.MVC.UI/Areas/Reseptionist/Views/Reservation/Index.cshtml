@@ -1,0 +1,49 @@
+﻿@model List<Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel-body">
+    <div class="adv-table">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+                <tr>
+
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>NumberPeople</th>
+                    <th>Price</th>
+                    <th>BookingDate</th>
+                    <th>CheckinDate</th>
+                    <th>ReleaseDate</th>
+                    <th>Room Number</th>
+                    <th>Room Floor</th>
+                    
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Booking item in Model)
+                {
+
+                    <tr class="gradeX">
+                        <td>@item.Guest.FirstName</td>
+                        <td>@item.Guest.LastName</td>
+                        <td>@item.Room.NumberPeople</td>
+                        <td>@item.Room.Price</td>
+                        <td>@item.BookingDate</td>
+                        <td>@item.CheckinDate</td>
+                        <td>@item.ReleaseDate</td>
+                        
+                        <td>@item.Room.RoomNumber</td>
+                        <td>@item.Room.RoomFloor</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
